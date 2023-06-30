@@ -25,4 +25,5 @@ urlpatterns = [
     path("fecha-actual/",views.fecha_actual),
     path("saludo/",views.saludo),
     path("bienvenida/<str:nombre>/<str:apellido>/",views.bienvenida),
+    path("crear-perro/<str:nombre>/<int:edad>/",views.crear_perro),
 ]
