@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h2>se creo el perro {{perro.nombre}} que tiene {{perro.edad}} años</h2>
-</body>
-</html>
+{% extends 'bases.html' %}
+{% block title_head %}
+<title>Crear perro</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Crear perro
+{% endblock h1_header %}
+
+{% block contenido %}
+<form action="" method="POST" > {# POST es para guardar informacion o trabajarlas en alguna bd, en otro caso usamos GET#}
+    {% csrf_token %} 
+    {{formulario}}
+     
+    <button>Crear</button>
+</form> 
+{% endblock contenido %}
+   
