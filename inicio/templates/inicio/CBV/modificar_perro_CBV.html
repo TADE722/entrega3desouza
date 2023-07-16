@@ -1,0 +1,19 @@
+{% extends 'bases.html' %}
+{% block title_head %}
+<title>modificar perro</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+modificar perro
+{% endblock h1_header %}
+
+{% block contenido %}
+<form action= {% url 'inicio:modificar_perro' perro.id %} method="POST" > {# POST es para guardar informacion o trabajarlas en alguna bd, en otro caso usamos GET#}
+    {% csrf_token %} 
+    <table>
+    {{form}}
+    </table>
+    <button>modificar</button>
+</form> 
+{% endblock contenido %}
+   

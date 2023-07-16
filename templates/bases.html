@@ -23,10 +23,17 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href={% url 'inicio:inicio' %}>inicio</a>  <!-- linea 4 urls.py -->
-                <a class="navbar-brand" href={% url 'inicio:prueba' %}>prueba</a>  <!-- linea 4 urls.py -->
-                <a class="navbar-brand" href={% url 'inicio:crear_perro' %}>crear perro</a>
-                <a class="btn btn-primary" href="#signup">iniciar</a>
+                <a class="navbar-brand" href={% url 'inicio:inicio' %}>Inicio</a>  <!-- linea 4 urls.py -->
+                <a class="navbar-brand" href={% url 'inicio:prueba' %}>Prueba</a>  <!-- linea 4 urls.py -->
+                <a class="navbar-brand" href={% url 'inicio:listar_perros' %}>Perro</a>
+                {% if request.user.is_authenticated %}
+                <a class="navbar-brand" href="#"> {{request.user.username}} </a>
+                <a class="btn btn-secondary" href= {% url 'usuario:logout' %} >Logout</a>
+                {% else %}
+                <a class="btn btn-primary" href= {% url 'usuario:login' %} >Login</a>
+                <a class="btn btn-primary" href= {% url 'usuario:registrarse' %} >Registrarse</a>
+
+                {% endif %}
             </div>
         </nav>
         <!-- Masthead-->

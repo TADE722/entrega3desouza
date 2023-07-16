@@ -8,12 +8,11 @@ Crear perro
 {% endblock h1_header %}
 
 {% block contenido %}
-<form action="" method="POST" > {# POST es para guardar informacion o trabajarlas en alguna bd, en otro caso usamos GET#}
+<form action= {% url 'inicio:crear_perro' %} method="POST" > {# POST es para guardar informacion o trabajarlas en alguna bd, en otro caso usamos GET#}
     {% csrf_token %} 
     <table>
-    {{formulario}}
+    {{form}}
     </table>
     <button>Crear</button>
 </form> 
 {% endblock contenido %}
-   

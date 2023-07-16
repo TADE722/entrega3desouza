@@ -1,0 +1,13 @@
+{% extends 'bases.html' %}
+{% block title_head %}
+<title>perro</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+{{perro.nombre}}
+{% endblock h1_header %}
+
+{% block contenido %}
+<li>Edad : {{perro.edad}} </li>
+<li>Descripcion : {{perro.descripcion}} </li>
+{% endblock contenido %}
